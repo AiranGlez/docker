@@ -38,7 +38,7 @@ centos container --> COMMAND '/bin/bash' (root command: it will exit when this c
 
 ## EXPOSING CONTAINERS
 
-`sudo docker run -d --name webserver -p 8080:80 nginx` #Detach option separates terminal from main root command / -p publishes container service trough indicated port (8080)
+`sudo docker run -d --name webserver -p 8080:80 nginx` #Detach option separates terminal from main root command / -p publishes container service through indicated port (8080)
 
 `curl http://localhost:8080` --> nginx server index
 
