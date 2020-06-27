@@ -41,3 +41,26 @@ centos container --> COMMAND '/bin/bash' (root command: it will exit when this c
 `sudo docker run -d --name webserver -p 8080:80 nginx` #Detach option separates terminal from main root command / -p publishes container service trough indicated port (8080)
 
 `curl http://localhost:8080` --> nginx server index
+
+## DATA PERSISTENCE
+
+`sudo docker run -d --name database mongo`
+
+`sudo docker exec -it database bash`
+
+`mongo`
+
+`use clients`
+
+`db.users.insert({ "name": "Airan" })`
+
+`db.users.find()`
+
+After we remove this container and create a new one, we can see our data has been lost with the container. To avoid this:
+
+`sudo mkdir /home/developer/mongodata`
+
+`sudo docker run --name database -d -v /home/developer/mongodata:/data/db mongo`
+
+Even if we delete this container, if we run a new one with this volume it will contain all data saved from the previous container.
+
