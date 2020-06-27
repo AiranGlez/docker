@@ -64,3 +64,14 @@ After we remove this container and create a new one, we can see our data has bee
 
 Even if we delete this container, if we run a new one with this volume it will contain all data saved from the previous container.
 
+## DOCKER VOLUMES
+
+On Linux: /var/lib/docker/volumes
+
+`sudo docker volume list`
+
+`sudo docker volume prune` #Remove all non-used volumes
+
+`sudo docker volume create db_data`
+
+`sudo docker run -d --name database2 --mount src=dbdata,dst=/data/db mongo`
