@@ -22,5 +22,12 @@ https://docs.docker.com/engine/install/ubuntu/
 
 `sudo docker rm $(sudo docker ps -aq)` #Removes all containers (-q option displays only container ID)
 
+## INTERACTIVE MODE
 
+`sudo docker run centos` #Download a centos image and builds a container
 
+`sudo docker ps -a`
+
+centos container --> COMMAND '/bin/bash'
+
+`sudo docker run -it centos` #Runs the container on interactive mode through host terminal
