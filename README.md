@@ -72,6 +72,24 @@ On Linux: /var/lib/docker/volumes
 
 `sudo docker volume prune` #Remove all non-used volumes
 
-`sudo docker volume create db_data`
+`sudo docker volume create VOLUMENAME`
 
-`sudo docker run -d --name database2 --mount src=dbdata,dst=/data/db mongo`
+`sudo docker run -d --name database2 --mount src=VOLUMENAME,dst=/data/db mongo`
+
+## DOCKER IMAGES
+
+`sudo docker pull IMAGENAME:VERSION` #Download a specific image
+
+https://hub.docker.com/
+
+`sudo docker image list`
+
+### Building our own images
+
+Creating a Dockerfile:
+
+`sudo nano Dockerfile`
+
+FROM ubuntu #Base image
+
+RUN touch /home/developer/hola-airan
