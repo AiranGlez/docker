@@ -92,4 +92,12 @@ Creating a Dockerfile:
 
 FROM ubuntu #Base image
 
-RUN touch /home/developer/hola-airan
+RUN touch /usr/src/hola-airan #Command to execute on build
+
+`sudo docker build -t IMAGENAME:VERSION PATH`
+
+To test this image we will need to run a container as previously indicated
+
+`sudo docker tag IMAGENAME:VERSION USER/REPOSITORY:VERSION` #Change image tag to allow the image to be published to own repository
+
+`sudo docker push USER/IMAGENAME:VERSION`
