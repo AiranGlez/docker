@@ -103,3 +103,12 @@ To test this image we will need to run a container as previously indicated
 `sudo docker push USER/IMAGENAME:VERSION`
 
 [USING DOCKER IN APPLICATION DEVELOPMENT]()
+
+## DOCKER-COMPOSE
+
+Docker-compose 
+
+`sudo docker rm $(sudo docker ps -aq)`
+
+[Analyze docker-compose.yml]()
+
