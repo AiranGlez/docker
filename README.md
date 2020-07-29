@@ -112,3 +112,12 @@ Docker-compose
 
 [Analyze docker-compose.yml](https://github.com/AiranGlez/docker/blob/master/demo2/docker-compose.yml)
 
+`sudo apt-get install docker-compose`
+
+`sudo docker-compose up`
+
+`sudo docker-compose up -d` #Console not attached to output
+
+`sudo docker-compose logs CONTAINERNAME`
+
+`sudo docker-compose exec SERVICENAME bash`
