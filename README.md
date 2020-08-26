@@ -110,14 +110,41 @@ Docker-compose
 
 `sudo docker rm $(sudo docker ps -aq)`
 
-[Analyze docker-compose.yml](https://github.com/AiranGlez/docker/blob/master/demo2/docker-compose.yml)
+[Docker-compose.yml 1](https://github.com/AiranGlez/docker/blob/master/demo2/docker-compose_v1.yml)
 
 `sudo apt-get install docker-compose`
 
 `sudo docker-compose up`
 
+`sudo docker-compose down`
+
 `sudo docker-compose up -d` #Console not attached to output
+
+`sudo docker-compose ps`
 
 `sudo docker-compose logs CONTAINERNAME`
 
 `sudo docker-compose exec SERVICENAME bash`
+
+Docker-compose as developing tool
+
+[Docker-compose.yml 2](https://github.com/AiranGlez/docker/blob/master/demo2/docker-compose_v2.yml)
+
+We are going to build the image with docker-compose from its context:
+
+`image: platziapp` ==> `build: .` #This will search for a Dockerfile on this context
+
+`sudo docker-compose build`
+
+Service scale
+
+`sudo docker-compose scale app=SCALENUMBER`
+
+To make this work, we will need to add a port range for the replicas to use in our docker-compose.yml
+
+`ports: -"3000:3000"` ==> `-"3000-3010:3000"`
+
+[Challenge: Adding a load balancer](https://github.com/AiranGlez/docker/blob/master/challenge/)
+
+
+
